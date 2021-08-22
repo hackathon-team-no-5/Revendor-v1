@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/mypage.css" th:href="@{/src/css/myPage.css}">
+    <link rel="stylesheet" href="../css/topBar.css" th:href="@{/src/css/topBar.css}">
+    <title>Revendor</title>
+
+</head>
+
+<body>
+    <!--배경 꾸미기 용-->
+    <div class="backgroundColor"></div>
+
+    <div class="wrap">
+        <!--헤더(고정바)-->
+        <div class="headerWrap" th:replace="fragments/common :: menu('myPage')">
+
+        </div>
+
+        <!--본문-->
+        <div class="bodyWrap">
+            <div class="title">MY PAGE</div>
+            <div class="mypageWrap" th:object="${user}">
+                <div class="myProfileWrap">
+                    <div class="myProfile">
+                        <!-- <img src="../picture/profile.jpg"> -->
+                        <div class="myProfileInfo">
+                            <br><br><span>👨‍👧‍👦 </span><span>김건</span><br><br>
+                            <span>harrison1995@naver.com</span><br><br>
+                            <!-- <span>🏠 </span><span>서울시 강남구</span><br><br><br> -->
+                            <br><br><br>
+                            <a href="/">내 정보 수정</a>
+                        </div>
+
+                        <div class="myItem">
+                            <div class="myWallet">
+                                <span>내 지갑</span>
+                                <img src="../picture/qrcode.png" th:src="@{/src/picture/qrcode.png}">
+                                <span>지갑 번호</span>
+                                <span>123ljkLKJlJGjlKJHlKUBB454u</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="myInfoWrap">
+                    <div class="myDeal">
+                        <span>내 거래</span>
+                        <div class="myDealWrap">
+                            <div class="myBuying">
+                                <img src="../picture/bill.png" th:src="@{/src/picture/bill.png}"><br>
+                                <span class="myDealText">판매내역</span><br>
+                                <span class="myDealNum">0</span>
+                            </div>
+                            <div class="mySelling">
+                                <img src="../picture/cart.png" th:src="@{/src/picture/cart.png}"><br>
+                                <span class="myDealText">구매내역</span><br>
+                                <span class="myDealNum">0</span>
+                            </div>
+                            <div class="myBasket">
+                                <img src="../picture/heart.png" th:src="@{/src/picture/heart.png}"><br>
+                                <span class="myDealText">관심상품</span><br>
+                                <span class="myDealNum">0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="myBuyConfirmWrap">
+                        <span>👉내 거래 목록</span><span>구매 확정을 기다리는 물건들이 있어요!</span>
+                        <div class="myBuyConfirm">
+                            <div class="myBuyConfirmItem">
+                                <img src="../picture/metamong.png" th:src="@{/src/picture/rolex.jpg}">
+                                <div class="myBuyConfirmItemText">
+                                    <span>제목 : </span><span>Rolex 중고 명품 시계 판매합니다.</span><br><br>
+                                    <span>판매자 : </span><span>harrison1995@naver.com</span>
+                                </div>
+                                <button>판매 중</button>
+                            </div>
+                            <div class="myBuyConfirmItem">
+                                <img src="../picture/nft.jpg" th:src="@{/src/picture/smile.jpg}">
+                                <div class="myBuyConfirmItemText">
+                                    <span>제목 : </span><span>[NFT] smile 작품 판매</span><br><br>
+                                    <span>판매자 : </span><span>ZICO</span>
+                                </div>
+                                <button>구매 확정</button>
+                            </div>
+                            <div class="myBuyConfirmItem">
+                                <img src="../picture/metamong.png" th:src="@{/src/picture/bag.jpg}">
+                                <div class="myBuyConfirmItemText">
+                                    <span>제목 : </span><span>[고가 명품]구찌 가방 급처</span><br><br>
+                                    <span>판매자 : </span><span>TEENAGER</span>
+                                </div>
+                                <button>거래 중</button>
+                            </div>
+                        </div>
+                        <div class="moreImg"><img src="../picture/more.png" th:src="@{/src/picture/more.png}"></div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+            <!--하단 footer-->
+            <footer th:replace="fragments/common :: footer">
+
+            </footer>
+
+        </div>
+
+    </div>
+</body>
+
+</html>
